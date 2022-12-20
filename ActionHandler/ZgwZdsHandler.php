@@ -1,16 +1,16 @@
 <?php
 
-namespace CommonGateway\PetStoreBundle\ActionHandler;
+namespace CommonGateway\ZgwZdsBundle\ActionHandler;
 
-use CommonGateway\PetStoreBundle\Service\PetStoreService;
+use CommonGateway\ZgwZdsBundle\Service\ZgwZdsService;
 
-class PetStoreHandler
+class ZgwZdsHandler
 {
-    private PetStoreService $petStoreService;
+    private ZgwZdsService $zgwZdsService;
 
-    public function __construct(PetStoreService $petStoreService)
+    public function __construct(ZgwZdsService $zgwZdsService)
     {
-        $this->petStoreService = $petStoreService;
+        $this->zgwZdsService = $zgwZdsService;
     }
 
     /**
@@ -23,7 +23,7 @@ class PetStoreHandler
         return [
             '$id'         => 'https://example.com/person.schema.json',
             '$schema'     => 'https://json-schema.org/draft/2020-12/schema',
-            'title'       => 'PetStore Action',
+            'title'       => 'ZgwZds Action',
             'description' => 'This handler returns a welcoming string',
             'required'    => [],
             'properties'  => [],
@@ -45,6 +45,6 @@ class PetStoreHandler
      */
     public function run(array $data, array $configuration): array
     {
-        return $this->petStoreService->petStoreHandler($data, $configuration);
+        return $this->zgwZdsService->zgwZdsHandler($data, $configuration);
     }
 }
